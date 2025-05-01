@@ -5,11 +5,11 @@ public class Employee {
     private double identification;
     private double baseSalary;
     private int riskLevel;
-    private ExtraHours extraHours;
+    //private ExtraHours extraHours;
     private Deduction deduction;
     private double SMMLV = 1423500;
 
-    public Employee(String name, String lastName, double identification, double baseSalary, int riskLevel, ExtraHours extraHours) {
+    public Employee(String name, String lastName, double identification, double baseSalary, int riskLevel /*ExtraHours extraHours*/) {
         this.name = name;
         this.lastName = lastName;
         this.identification = identification;
@@ -36,9 +36,9 @@ public class Employee {
         if (baseSalary > SMMLV*2 ) {
              baseSalary = baseSalary + SMMLV;
         }
-        double calculateTotalExtraHours = extraHours.calculateTotalExtraHours();
+        //double calculateTotalExtraHours = extraHours.calculateTotalExtraHours();
         double calculateTotalDeductions = deduction.calculateTotalDeductions();
-        return baseSalary + calculateTotalExtraHours - calculateTotalDeductions;
+        return baseSalary /*calculateTotalExtraHours */- calculateTotalDeductions;
     }
     public void inf(){
         System.out.println("Nombre: " + name);
